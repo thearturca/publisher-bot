@@ -3,7 +3,7 @@ import asyncHandler from "express-async-handler"
 import { Kysely } from "kysely";
 import { Database } from "@repo/db";
 import multer from "multer";
-import { PostsService, TelegramService } from "../../services/index.js";
+import { PostsService } from "../../services/index.js";
 import { getInitData } from "../../middleware/index.js";
 import { BadRequestError } from "../../errors/index.js";
 import { Api, InputFile, InputMediaBuilder } from "grammy";
@@ -13,9 +13,8 @@ export function postsRouter(db: Kysely<Database>, telegramApi: Api): Router {
       const posts = Router();
 
       const postsService = new PostsService(db);
-      const telegramService = new TelegramService(telegramApi);
 
-      posts.get('/', asyncHandler(async (req, res) => {
+      posts.get('/', asyncHandler(async (_req, res) => {
             const initData = getInitData(res);
             const userId = initData!.user!.id.toString();
 

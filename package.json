@@ -2,7 +2,7 @@
       "name": "telegram-post-scheduler",
       "private": true,
       "scripts": {
-            "build": "turbo build",
+            "build": "dotenv-run --environment production -- turbo build",
             "dev": "dotenv-run --environment development -- turbo dev --env-mode=loose",
             "lint": "turbo lint",
             "format": "prettier --write \"**/*.{ts,tsx,md}\""

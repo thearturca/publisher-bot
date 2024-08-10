@@ -26,7 +26,7 @@ export function createApiRouter(db: Kysely<Database>, telegramApi: Api): Router 
       const posts = postsRouter(db, telegramApi);
       apiRouter.use("/posts", posts);
 
-      const user = userRouter(db, telegramApi);
+      const user = userRouter(db);
       apiRouter.use("/user", user);
 
       return apiRouter;

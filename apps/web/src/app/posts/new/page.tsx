@@ -18,7 +18,7 @@ export default function NewPostPage() {
             return () => {
                   backButton.hide();
             }
-      }, []);
+      }, [backButton]);
       return (
             <div className="flex flex-col gap-8">
                   <CreatePostComponent />

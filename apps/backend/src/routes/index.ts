@@ -1,1 +1,2 @@
-export * from "./posts.router.js";
+export * from "./default.router.js";
+export * from "./api/index.js";

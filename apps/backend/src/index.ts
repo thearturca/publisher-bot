@@ -6,7 +6,7 @@ import { errorHandler } from './middleware/index.js';
 import { Kysely, PostgresDialect } from 'kysely';
 import { Database } from '@repo/db';
 import { ConfigValidator } from './env.validator.js';
-import { createDefaultRouter } from './routes/default.router.js';
+import { createDefaultRouter } from './routes/index.js';
 
 const { Pool } = pg;
 
